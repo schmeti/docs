@@ -1,33 +1,51 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6-buster
+      - image: cimg/python:3.6
         environment:
           DOCS: True
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "d8:54:03:30:7d:59:b0:7f:00:41:ac:4a:05:c9:78:12"
+      - run:
+          name: Remove previous docs
+          command: |
+            rm -r doc
+      - run:
+          name: Setup virtual environment
+          command: |
+            # Run in a fresh virtual environment, to avoid conflicts with preinstalled packages.
+            virtualenv -p python3.6 .venv
+            source .venv/bin/activate
+            pip install --progress-bar=off -U pip
       - run:
           name: Install GPflow
           command: |
-            pip install -U pip
-            pip install --use-feature=2020-resolver git+git://github.com/GPflow/GPflow.git@develop#egg=gpflow
+            source .venv/bin/activate
             git clone --branch develop https://github.com/GPflow/GPflow.git
-            pip install --use-feature=2020-resolver -r GPflow/tests_requirements.txt
+            # Ensure consistency between tensorflow and tensorflow-probability
+            pip install --progress-bar=off tensorflow==2.6.* tensorflow-probability==0.14.*
+            pip install --progress-bar=off -e GPflow -r GPflow/tests_requirements.txt
       - run:
           name: Make notebooks and move docs
+          no_output_timeout: 20m
           command: |
-            # attempt building notebooks three times to work around kernel crashes, using less parallel jobs each time:
-            make -k -C GPflow/doc/source/notebooks -j 4
-            make -k -C GPflow/doc/source/notebooks -j 2
-            make -C GPflow/doc/source/notebooks -j 1
-            rm -r doc
+            source .venv/bin/activate
+            make -C GPflow/doc/source/notebooks
             cp -r GPflow/doc .
-            rm -rf GPflow
       - run:
           name: Generate doc rst file
           command: |
+            source .venv/bin/activate
             python doc/source/generate_module_rst.py
+      - run:
+          name: Clean up
+          command: |
+            rm -rf .venv
+            rm -rf GPflow
       - run:
           name: Commit
           command: |
@@ -36,5 +54,3 @@ jobs:
             git add --all
             git commit -m "Update docs [ci skip]"
             git push origin develop
-
-      - run: echo "Docs created successfully"
