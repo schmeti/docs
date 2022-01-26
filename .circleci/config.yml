@@ -23,12 +23,17 @@ jobs:
             pip install --progress-bar=off -U pip
       - run:
           name: Install GPflow
-          command: |
-            source .venv/bin/activate
-            git clone --branch develop https://github.com/GPflow/GPflow.git
-            # Ensure consistency between tensorflow and tensorflow-probability
-            pip install --progress-bar=off tensorflow==2.6.* tensorflow-probability==0.14.*
-            pip install --progress-bar=off -e GPflow -r GPflow/tests_requirements.txt
+          command: "
+            source .venv/bin/activate \n
+            git clone --branch develop https://github.com/GPflow/GPflow.git \n
+            # Everything is installed in one pip command, to allow for better dependency version
+            # resolution. Explicit tensorflow and tensorflow-probability version, to ensure
+            # consistency between them. \n
+            pip install --progress-bar=off
+              -e GPflow
+              -r GPflow/tests_requirements.txt
+              tensorflow==2.6.* tensorflow-probability==0.14.* \n
+          "
       - run:
           name: Make notebooks and move docs
           no_output_timeout: 20m
