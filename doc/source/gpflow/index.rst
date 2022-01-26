@@ -93,6 +93,15 @@ gpflow.expectations
    expectations/index
 
 
+gpflow.experimental
+===================
+.. automodule:: gpflow.experimental
+.. toctree::
+   :maxdepth: 1
+
+   experimental/index
+
+
 gpflow.inducing_variables
 =========================
 .. automodule:: gpflow.inducing_variables
