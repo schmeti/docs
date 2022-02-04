@@ -8,12 +8,6 @@ gpflow.conditionals.util
 
 
 
-gpflow.conditionals.util.base_conditional_with_lm
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autofunction:: gpflow.conditionals.util.base_conditional_with_lm
-
-
 gpflow.conditionals.util.fully_correlated_conditional_repeat
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

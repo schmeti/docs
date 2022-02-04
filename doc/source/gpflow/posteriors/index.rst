@@ -96,10 +96,24 @@ gpflow.posteriors.SGPRPosterior
    :members:
 
 
+gpflow.posteriors.VGPPosterior
+------------------------------
+
+.. autoclass:: gpflow.posteriors.VGPPosterior
+   :show-inheritance:
+   :members:
+
+
 gpflow.posteriors.add_noise_cov
 -------------------------------
 
 .. autofunction:: gpflow.posteriors.add_noise_cov
+
+
+gpflow.posteriors.base_conditional_with_lm
+------------------------------------------
+
+.. autofunction:: gpflow.posteriors.base_conditional_with_lm
 
 
 gpflow.posteriors.create_posterior
@@ -112,6 +126,12 @@ gpflow.posteriors.expand_independent_outputs
 --------------------------------------------
 
 .. autofunction:: gpflow.posteriors.expand_independent_outputs
+
+
+gpflow.posteriors.eye
+---------------------
+
+.. autofunction:: gpflow.posteriors.eye
 
 
 gpflow.posteriors.fully_correlated_conditional

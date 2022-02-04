@@ -190,3 +190,12 @@ gpflow.models.util
 
    util/index
 
+
+gpflow.models.vgp
+-----------------
+.. automodule:: gpflow.models.vgp
+.. toctree::
+   :maxdepth: 1
+
+   vgp/index
+

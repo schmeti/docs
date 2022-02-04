@@ -20,12 +20,6 @@ gpflow.utilities.ops.difference_matrix
 .. autofunction:: gpflow.utilities.ops.difference_matrix
 
 
-gpflow.utilities.ops.eye
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autofunction:: gpflow.utilities.ops.eye
-
-
 gpflow.utilities.ops.pca_reduce
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
