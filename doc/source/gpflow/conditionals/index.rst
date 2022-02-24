@@ -23,19 +23,19 @@ This function uses multiple dispatch, which will depend on the type of argument 
 .. code-block:: python
 
     gpflow.conditionals.conditional( object, InducingVariables, Kernel, object )
-    # dispatch to -> gpflow.conditionals.conditionals._conditional(...)
+    # dispatch to -> gpflow.conditionals.conditionals._sparse_conditional(...)
 
 
-.. autofunction:: gpflow.conditionals.conditionals._conditional
+.. autofunction:: gpflow.conditionals.conditionals._sparse_conditional
 
 
 .. code-block:: python
 
     gpflow.conditionals.conditional( object, object, Kernel, object )
-    # dispatch to -> gpflow.conditionals.conditionals._conditional(...)
+    # dispatch to -> gpflow.conditionals.conditionals._dense_conditional(...)
 
 
-.. autofunction:: gpflow.conditionals.conditionals._conditional
+.. autofunction:: gpflow.conditionals.conditionals._dense_conditional
 
 
 .. code-block:: python
