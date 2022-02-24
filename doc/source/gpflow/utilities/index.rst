@@ -20,6 +20,12 @@ gpflow.utilities.freeze
 .. autofunction:: gpflow.utilities.freeze
 
 
+gpflow.utilities.is_variable
+----------------------------
+
+.. autofunction:: gpflow.utilities.is_variable
+
+
 gpflow.utilities.leaf_components
 --------------------------------
 
@@ -90,6 +96,12 @@ gpflow.utilities.triangular
 ---------------------------
 
 .. autofunction:: gpflow.utilities.triangular
+
+
+gpflow.utilities.triangular_size
+--------------------------------
+
+.. autofunction:: gpflow.utilities.triangular_size
 
 
 gpflow.utilities.bijectors

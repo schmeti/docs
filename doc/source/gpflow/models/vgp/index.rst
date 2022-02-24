@@ -23,3 +23,9 @@ gpflow.models.vgp.VGP_with_posterior
    :show-inheritance:
    :members:
 
+
+gpflow.models.vgp.update_vgp_data
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: gpflow.models.vgp.update_vgp_data
+
