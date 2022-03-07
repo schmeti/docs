@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/python:3.6
+      - image: cimg/python:3.7
         environment:
           DOCS: True
     steps:
@@ -18,7 +18,7 @@ jobs:
           name: Setup virtual environment
           command: |
             # Run in a fresh virtual environment, to avoid conflicts with preinstalled packages.
-            virtualenv -p python3.6 .venv
+            virtualenv -p python3.7 .venv
             source .venv/bin/activate
             pip install --progress-bar=off -U pip
       - run:
