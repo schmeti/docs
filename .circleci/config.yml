@@ -36,7 +36,7 @@ jobs:
           "
       - run:
           name: Make notebooks and move docs
-          no_output_timeout: 20m
+          no_output_timeout: 60m
           command: |
             source .venv/bin/activate
             make -C GPflow/doc/source/notebooks
