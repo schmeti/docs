@@ -30,6 +30,12 @@ gpflow.experimental.check_shapes.check_shapes
 .. autofunction:: gpflow.experimental.check_shapes.check_shapes
 
 
+gpflow.experimental.check_shapes.get_check_shapes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: gpflow.experimental.check_shapes.get_check_shapes
+
+
 gpflow.experimental.check_shapes.get_shape
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -40,6 +46,21 @@ gpflow.experimental.check_shapes.inherit_check_shapes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autofunction:: gpflow.experimental.check_shapes.inherit_check_shapes
+
+
+gpflow.experimental.check_shapes.maybe_get_check_shapes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: gpflow.experimental.check_shapes.maybe_get_check_shapes
+
+
+gpflow.experimental.check_shapes.accessors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. automodule:: gpflow.experimental.check_shapes.accessors
+.. toctree::
+   :maxdepth: 1
+
+   accessors/index
 
 
 gpflow.experimental.check_shapes.argument_ref
