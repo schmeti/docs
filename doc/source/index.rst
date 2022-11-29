@@ -6,6 +6,8 @@
 GPflow Documentation
 ==================================
 
+Please note this documentation is for an old version of GPflow.  For the most recent version of GPflow, please see https://gpflow.github.io/GPflow/develop/index.html
+
 .. toctree::
    :maxdepth: 2
 
